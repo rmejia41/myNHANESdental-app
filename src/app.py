@@ -16,28 +16,13 @@ from bokeh.models import ColumnDataSource
 
 
 # bring data into app
-df = pd.read_csv('C:/Users/Biu9/OneDrive - CDC/GitHub/open_datasets/caries_nhanes_demo_cariesonly.csv')
-df.rename({'age':'Age'},axis=1, inplace=True)
-df.rename({'poverty':'Poverty'},axis=1, inplace=True)
-df.rename({'cariestotal':'Total Caries Indicators'},axis=1, inplace=True)
-df.rename({'decayedpt':'Number of Decayed Permanent Teeth'},axis=1, inplace=True)
-df.rename({'filledprsurf':'Number of Filled Primary Surfaces'},axis=1, inplace=True)
-df.rename({'decayedprt':'Number of Decayed Primary Teeth'},axis=1, inplace=True)
-df.rename({'decayedfilledprsurf':'Number of Decayed and Filled Primary Surfaces'},axis=1, inplace=True)
-df.rename({'decayedpersurf':'Number of Decayed Permanent Surfaces'},axis=1, inplace=True)
-df.rename({'persurfmisscarperio':'Number of Permanent Surfaces Missed due to Caries or Periodontal Disease'},axis=1, inplace=True)
-df.rename({'decayedfilledmissdisease':'Number of Filled and Missed Permanent Teeth due to Disease'},axis=1, inplace=True)
-df.rename({'decayedfilledpersurf':'Number of Decayed and Filled Permanent Surfaces'},axis=1, inplace=True)
-df.rename({'soundprt':'Number of Sound Primary Teeth'},axis=1, inplace=True)
-df.rename({'soundpersurf':'Number of Sound Permanent Surfaces'},axis=1, inplace=True)
-df.rename({'filledpersurf':'Number of Filled Permanent Surfaces'},axis=1, inplace=True)
-df.rename({'soundpt':'Number of Sound Permanent Teeth'},axis=1, inplace=True)
-df.rename({'soundprt':'Number of Sound Primary Teeth'},axis=1, inplace=True)
+df = pd.read_csv('https://github.com/rmejia41/open_datasets/raw/main/caries_nhanes_demo_cariesonly.csv')
 #print(df.columns)
 
   #Set up Dash app
 app = Dash(__name__, external_stylesheets=['https://codepen.io/chriddyp/pen/bWLwgP.css'])
 server = app.server
+
 
 # Set up the page layout
 app.layout = dbc.Container([
