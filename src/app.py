@@ -26,7 +26,7 @@ server = app.server
 
 # Set up the page layout
 app.layout = dbc.Container([
-    html.H1("Dasboard: Correlation Between Dental Caries Indicators and Federal Poverty Level Among Persons >20 Years, NHANES, 1999-2004"),
+    html.H1("Dasboard: Correlation Between Dental Caries Indicators and Age, NHANES, 1999-2004"),
 
     html.Iframe(
         id='scatterplots',
@@ -57,8 +57,8 @@ def plot_data(selected_ycol):
     # Matplotlib graphing library------------------------------------------
     colvalue = df[selected_ycol]
     fig, ax = plt.subplots()
-    ax.scatter(x=df.Poverty, y=colvalue, color='red')
-    ax.set_xlabel("Poverty", fontsize=14)
+    ax.scatter(x=df.Age, y=colvalue, color='red')
+    ax.set_xlabel("Age", fontsize=14)
     ax.set_ylabel(selected_ycol, fontsize=14)
     ax.grid(color='lightgray', alpha=0.7)
     html_matplotlib = mpld3.fig_to_html(fig)
